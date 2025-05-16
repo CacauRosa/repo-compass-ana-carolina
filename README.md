@@ -48,7 +48,7 @@ Abaixo está um resumo do que foi feito em cada semana do estágio, incluindo as
 - Realização de Testes Exploratórios com técnicas diferentes pelos membros da Squad
 - **Atividades entregues:** Planejamento de Testes refinado e documentação do Teste Exploratório individual
 
-## [Sprint 4](Documentos/Sprint%204)
+## 🔁 [Sprint 4](Documentos/Sprint%204)
 ### 📅 Semana 7:
 - Introdução ao estudo de APIs e documentação
 - Estudo da ferramenta Postman
