@@ -1,0 +1,4610 @@
+{
+	"info": {
+		"_postman_id": "a9f79e52-1dcb-4cf6-864a-c56ca8faca79",
+		"name": "Pet Store",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44688947",
+		"_collection_link": "https://bug-hunters-1751.postman.co/workspace/Bug-Hunters-Workspace~c95af515-96d5-4896-8a53-137e2a0b0c52/collection/36195005-a9f79e52-1dcb-4cf6-864a-c56ca8faca79?action=share&source=collection_link&creator=44688947"
+	},
+	"item": [
+		{
+			"name": "/pet",
+			"item": [
+				{
+					"name": "DELETE",
+					"item": [
+						{
+							"name": "pet/{petId}",
+							"item": [
+								{
+									"name": "Delete pet with valid integer ID",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Response status code is 200\", function () {\r",
+													"    pm.expect(pm.response.code).to.equal(200);\r",
+													"});\r",
+													"\r",
+													"\r",
+													"pm.test(\"Validate the response for successful deletion of a pet\", function () {\r",
+													"  const responseBody = pm.response.text();\r",
+													"  \r",
+													"  pm.expect(responseBody).to.eql('Pet deleted');\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/pet/{{defaultPetID}}",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"pet",
+												"{{defaultPetID}}"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete pet with empty ID",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Response status code is 405 Method Not Allowed\", function () {\r",
+													"    pm.expect(pm.response.code).to.equal(405);\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/pet/",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"pet",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete pet with nonexistent ID",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Response status code is 200\", function () {\r",
+													"    pm.expect(pm.response.code).to.equal(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Validate the response for successful deletion of a pet\", function () {\r",
+													"  const responseBody = pm.response.text();\r",
+													"  \r",
+													"  pm.expect(responseBody).to.eql('Pet deleted');\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/pet/999999999999999999",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"pet",
+												"999999999999999999"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete pet with invalid string ID",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Response status code is 400 Bad Request\", function () {\r",
+													"    pm.expect(pm.response.code).to.equal(400);\r",
+													"});\r",
+													"\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/pet/abc",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"pet",
+												"abc"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "GET",
+					"item": [
+						{
+							"name": "pet/findByStatus",
+							"item": [
+								{
+									"name": "Find with status: available",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response is a valid JSON\", function () {\r",
+													"    pm.response.to.be.json;\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/pet/findByStatus?status=pending",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"pet",
+												"findByStatus"
+											],
+											"query": [
+												{
+													"key": "status",
+													"value": "pending"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Find with status: pending",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response is a valid JSON\", function () {\r",
+													"    pm.response.to.be.json;\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/pet/findByStatus?status=available",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"pet",
+												"findByStatus"
+											],
+											"query": [
+												{
+													"key": "status",
+													"value": "available"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Find with status: empty",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 400 Bad Request\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response is a valid JSON\", function () {\r",
+													"    pm.response.to.be.json;\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/pet/findByStatus?status",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"pet",
+												"findByStatus"
+											],
+											"query": [
+												{
+													"key": "status",
+													"value": null
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Find with invalid status: unknown",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 400 Bad Request\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response is a valid JSON\", function () {\r",
+													"    pm.response.to.be.json;\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/pet/findByStatus?status=unknown",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"pet",
+												"findByStatus"
+											],
+											"query": [
+												{
+													"key": "status",
+													"value": "unknown"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Find with no status param",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 400 Bad Request\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/pet/findByStatus",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"pet",
+												"findByStatus"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "pet/findByTags",
+							"item": [
+								{
+									"name": "Find with valid tags",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response is a valid JSON\", function () {\r",
+													"    pm.response.to.be.json;\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/pet/findByTags?tags=dog,cat",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"pet",
+												"findByTags"
+											],
+											"query": [
+												{
+													"key": "tags",
+													"value": "dog,cat"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Find with invalid data type",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response is a valid JSON\", function () {\r",
+													"    pm.response.to.be.json;\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/pet/findByTags?tags=34325",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"pet",
+												"findByTags"
+											],
+											"query": [
+												{
+													"key": "tags",
+													"value": "34325"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Find with duplicate tags",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response is a valid JSON\", function () {\r",
+													"    pm.response.to.be.json;\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/pet/findByTags?tags=dog,dog",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"pet",
+												"findByTags"
+											],
+											"query": [
+												{
+													"key": "tags",
+													"value": "dog,dog"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Find with no tags",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 400 Bad Request\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/pet/findByTags?tags=",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"pet",
+												"findByTags"
+											],
+											"query": [
+												{
+													"key": "tags",
+													"value": ""
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Find with no tags param",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 400 Bad Request\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/pet/findByTags",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"pet",
+												"findByTags"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "pet/{petId}",
+							"item": [
+								{
+									"name": "Find with valid ID",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response is a valid JSON\", function () {\r",
+													"    pm.response.to.be.json;\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/pet/{{defaultPetID}}",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"pet",
+												"{{defaultPetID}}"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Find with Nonexistent ID",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 404 Not Found\", function () {\r",
+													"    pm.response.to.have.status(404);\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/pet/9999999999",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"pet",
+												"9999999999"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Find with string as ID",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 400 Bad Request\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/pet/abc",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"pet",
+												"abc"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Find with empty ID",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 400 Bad Request\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/pet/abc",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"pet",
+												"abc"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Find with special characters as ID",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 400 Bad Request\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/pet/!@#$",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"pet",
+												"!@"
+											],
+											"hash": "$"
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "POST",
+					"item": [
+						{
+							"name": "pet/",
+							"item": [
+								{
+									"name": "Add a pet with valid body",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response is a valid JSON\", function () {\r",
+													"    pm.response.to.be.json;\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"id\": 10,\r\n  \"name\": \"doggie\",\r\n  \"category\": {\r\n    \"id\": 1,\r\n    \"name\": \"Dogs\"\r\n  },\r\n  \"photoUrls\": [\r\n    \"string\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 0,\r\n      \"name\": \"string\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/pet",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"pet"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Add a pet with invalid body",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 400 Bad Request\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response is a valid JSON\", function () {\r",
+													"    pm.response.to.be.json;\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"id\": 1\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/pet",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"pet"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Add a pet without ID",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 400 Bad Request\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response is a valid JSON\", function () {\r",
+													"    pm.response.to.be.json;\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"name\": \"doggie\",\r\n  \"category\": {\r\n    \"id\": 1,\r\n    \"name\": \"Dogs\"\r\n  }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/pet",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"pet"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "pet/{petId}",
+							"item": [
+								{
+									"name": "Update with valid tag and ID",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response is a valid JSON\", function () {\r",
+													"    pm.response.to.be.json;\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/pet/{{defaultPetID}}?name=doooog",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"pet",
+												"{{defaultPetID}}"
+											],
+											"query": [
+												{
+													"key": "name",
+													"value": "doooog"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Update with invalid ID",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 400 Bad Request\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response is a valid JSON\", function () {\r",
+													"    pm.response.to.be.json;\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/pet/abc?name=doooog",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"pet",
+												"abc"
+											],
+											"query": [
+												{
+													"key": "name",
+													"value": "doooog"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Update with invalid tag",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 404 Not Found\", function () {\r",
+													"    pm.response.to.have.status(404);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response is a valid JSON\", function () {\r",
+													"    pm.response.to.be.json;\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/pet{{defaultPetID}}?notatag=doooog",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"pet{{defaultPetID}}"
+											],
+											"query": [
+												{
+													"key": "notatag",
+													"value": "doooog"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Update with invalid no tag",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 404 Not Found\", function () {\r",
+													"    pm.response.to.have.status(404);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response is a valid JSON\", function () {\r",
+													"    pm.response.to.be.json;\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/pet{{defaultPetID}}",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"pet{{defaultPetID}}"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "pet/uploadImage",
+							"item": [
+								{
+									"name": "Upload valid image png",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response is a valid JSON\", function () {\r",
+													"    pm.response.to.be.json;\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "data-binary",
+												"value": "@xhgafikasgddkfgkajsfhd.png",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "file",
+											"file": {
+												"src": "/C:/Users/Matuz/Downloads/dummy_600x400_ffffff_cccccc.png"
+											}
+										},
+										"url": {
+											"raw": "{{url}}/pet/{{defaultPetID}}/uploadImage",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"pet",
+												"{{defaultPetID}}",
+												"uploadImage"
+											],
+											"query": [
+												{
+													"key": "additionalMetadata",
+													"value": "dasdasdasdasdsdad",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Upload valid image jpg",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response is a valid JSON\", function () {\r",
+													"    pm.response.to.be.json;\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "file",
+											"file": {
+												"src": "/C:/Users/Matuz/Downloads/dummy_600x400_ffffff_cccccc.jpg"
+											}
+										},
+										"url": {
+											"raw": "{{url}}/pet/{{defaultPetID}}/uploadImage",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"pet",
+												"{{defaultPetID}}",
+												"uploadImage"
+											],
+											"query": [
+												{
+													"key": "additionalMetadata",
+													"value": "dasdasdasdasdsdad",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Upload valid image svg",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response is a valid JSON\", function () {\r",
+													"    pm.response.to.be.json;\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "file",
+											"file": {
+												"src": "/C:/Users/Matuz/Downloads/dummy_600x400_ffffff_cccccc.svg"
+											}
+										},
+										"url": {
+											"raw": "{{url}}/pet/{{defaultPetID}}/uploadImage",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"pet",
+												"{{defaultPetID}}",
+												"uploadImage"
+											],
+											"query": [
+												{
+													"key": "additionalMetadata",
+													"value": "dasdasdasdasdsdad",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Upload valid image webp",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response is a valid JSON\", function () {\r",
+													"    pm.response.to.be.json;\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "file",
+											"file": {
+												"src": "/C:/Users/Matuz/Downloads/dummy_600x400_ffffff_cccccc.webp"
+											}
+										},
+										"url": {
+											"raw": "{{url}}/pet/{{defaultPetID}}/uploadImage",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"pet",
+												"{{defaultPetID}}",
+												"uploadImage"
+											],
+											"query": [
+												{
+													"key": "additionalMetadata",
+													"value": "dasdasdasdasdsdad",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "PUT",
+					"item": [
+						{
+							"name": "pet/",
+							"item": [
+								{
+									"name": "update existing pet with different forms",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response is a valid JSON\", function () {\r",
+													"    pm.response.to.be.json;\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"id\": {{id}},\r\n  \"name\": \"{{name}}\",\r\n  \"category\": {\r\n    \"id\": {{category_id}},\r\n    \"name\": \"{{category_name}}\"\r\n  },\r\n  \"photoUrls\": [ \"{{photoUrls}}\" ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": {{tags_0_id}},\r\n      \"name\": \"{{tags_0_name}}\"\r\n    }\r\n  ],\r\n  \"status\": \"{{status}}\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/pet",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"pet"
+											]
+										},
+										"description": "This endpoint allows you to update a pet using an HTTP PUT request. To test the API endpoint, you can create a POST request with the provided JSON data in the request body. The last call to this request used the following payload with the raw request body type:\n\n``` json\n{\"id\":{}}\n\n ```"
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "/user",
+			"item": [
+				{
+					"name": "DELETE",
+					"item": [
+						{
+							"name": "user/{username}",
+							"item": [
+								{
+									"name": "deletar usuário",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/user/theUser",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"user",
+												"theUser"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "deletar usuário que não existe",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 404\", function () {",
+													"    pm.response.to.have.status(404);",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/user/sabrina",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"user",
+												"sabrina"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "GET",
+					"item": [
+						{
+							"name": "user/login",
+							"item": [
+								{
+									"name": "login",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/user/login",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"user",
+												"login"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "user/logout",
+							"item": [
+								{
+									"name": "logout",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/user/logout",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"user",
+												"logout"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "user/{username}",
+							"item": [
+								{
+									"name": "procurar por usuário",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/user/theUser",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"user",
+												"theUser"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "procurar por usuário que não existe",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 404\", function () {",
+													"    pm.response.to.have.status(404);",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/user/iza",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"user",
+												"iza"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "POST",
+					"item": [
+						{
+							"name": "user/",
+							"item": [
+								{
+									"name": "criar usuário",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": 10,\n  \"username\": \"theUser\",\n  \"firstName\": \"John\",\n  \"lastName\": \"James\",\n  \"email\": \"john@email.com\",\n  \"password\": \"12345\",\n  \"phone\": \"12345\",\n  \"userStatus\": 1\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/user",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"user"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "user/createWithList",
+							"item": [
+								{
+									"name": "criar usuário com lista",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "[\n  {\n    \"id\": 10,\n    \"username\": \"theUser\",\n    \"firstName\": \"John\",\n    \"lastName\": \"James\",\n    \"email\": \"john@email.com\",\n    \"password\": \"12345\",\n    \"phone\": \"12345\",\n    \"userStatus\": 1\n  }\n]",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/user/createWithList",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"user",
+												"createWithList"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "PUT",
+					"item": [
+						{
+							"name": "user/{username}",
+							"item": [
+								{
+									"name": "atualizar",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {",
+													"    pm.response.to.have.status(200);",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": 10,\n  \"username\": \"theUser\",\n  \"firstName\": \"John\",\n  \"lastName\": \"James\",\n  \"email\": \"john@email.com\",\n  \"password\": \"12345\",\n  \"phone\": \"12345\",\n  \"userStatus\": 1\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/user/theUser",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"user",
+												"theUser"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "atualizar usuario",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 400\", function () {",
+													"    pm.response.to.have.status(400);",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"username\": \"theUser\",\n  \"userStatus\": 1\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/user/theUser",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"user",
+												"theUser"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "atualizar com usuario que não existe",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 404\", function () {",
+													"    pm.response.to.have.status(404);",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": 10,\n  \"username\": \"theUser\",\n  \"firstName\": \"John\",\n  \"lastName\": \"James\",\n  \"email\": \"john@email.com\",\n  \"password\": \"12345\",\n  \"phone\": \"12345\",\n  \"userStatus\": 1\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/user/izadorasantos",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"user",
+												"izadorasantos"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "/store",
+			"item": [
+				{
+					"name": "DELETE",
+					"item": [
+						{
+							"name": "store/order/{orderId}",
+							"item": [
+								{
+									"name": "Delete purchase order by ID",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Verifica se a resposta tem status 200\r",
+													"pm.test(\"Response status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"DELETE works with ID < 1000\", function () {\r",
+													"    const idPart = pm.request.url.path.join('/').split('/').pop(); // Fixed the splitting of the URL\r",
+													"    const orderId = parseInt(idPart, 10);\r",
+													"\r",
+													"    pm.expect(isNaN(orderId)).to.be.false; // Verifica se é número\r",
+													"    pm.expect(orderId).to.be.below(1000);   // Deve ser < 1000\r",
+													"    pm.expect(pm.response.code).to.equal(200); // Espera status 200 OK\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/store/order/11",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"store",
+												"order",
+												"11"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "ID > 1000",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/store/order/2000",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"store",
+														"order",
+														"2000"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "plain",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Fri, 02 May 2025 17:57:40 GMT"
+												},
+												{
+													"key": "Content-Length",
+													"value": "0"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Access-Control-Allow-Methods",
+													"value": "GET, POST, DELETE, PUT"
+												},
+												{
+													"key": "Access-Control-Allow-Headers",
+													"value": "Content-Type, api_key, Authorization"
+												},
+												{
+													"key": "Access-Control-Expose-Headers",
+													"value": "Content-Disposition"
+												},
+												{
+													"key": "Server",
+													"value": "Jetty(9.4.53.v20231009)"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "ID negativo!",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/store/order/-110",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"store",
+														"order",
+														"-110"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "plain",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Fri, 02 May 2025 17:58:13 GMT"
+												},
+												{
+													"key": "Content-Length",
+													"value": "0"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Access-Control-Allow-Methods",
+													"value": "GET, POST, DELETE, PUT"
+												},
+												{
+													"key": "Access-Control-Allow-Headers",
+													"value": "Content-Type, api_key, Authorization"
+												},
+												{
+													"key": "Access-Control-Expose-Headers",
+													"value": "Content-Disposition"
+												},
+												{
+													"key": "Server",
+													"value": "Jetty(9.4.53.v20231009)"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "ID float",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/store/order/10.2",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"store",
+														"order",
+														"10.2"
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Fri, 02 May 2025 17:58:43 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Content-Length",
+													"value": "92"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Access-Control-Allow-Methods",
+													"value": "GET, POST, DELETE, PUT"
+												},
+												{
+													"key": "Access-Control-Allow-Headers",
+													"value": "Content-Type, api_key, Authorization"
+												},
+												{
+													"key": "Access-Control-Expose-Headers",
+													"value": "Content-Disposition"
+												},
+												{
+													"key": "Server",
+													"value": "Jetty(9.4.53.v20231009)"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"code\": 400,\n    \"message\": \"Input error: couldn't convert `10.2` to type `class java.lang.Long`\"\n}"
+										},
+										{
+											"name": "ID string",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/store/order/abc",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"store",
+														"order",
+														"abc"
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Fri, 02 May 2025 17:59:12 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Content-Length",
+													"value": "91"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Access-Control-Allow-Methods",
+													"value": "GET, POST, DELETE, PUT"
+												},
+												{
+													"key": "Access-Control-Allow-Headers",
+													"value": "Content-Type, api_key, Authorization"
+												},
+												{
+													"key": "Access-Control-Expose-Headers",
+													"value": "Content-Disposition"
+												},
+												{
+													"key": "Server",
+													"value": "Jetty(9.4.53.v20231009)"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"code\": 400,\n    \"message\": \"Input error: couldn't convert `abc` to type `class java.lang.Long`\"\n}"
+										},
+										{
+											"name": "Sem ID",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/store/order/",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"store",
+														"order",
+														""
+													]
+												}
+											},
+											"status": "Method Not Allowed",
+											"code": 405,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Fri, 02 May 2025 17:59:30 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Content-Length",
+													"value": "52"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Access-Control-Allow-Methods",
+													"value": "GET, POST, DELETE, PUT"
+												},
+												{
+													"key": "Access-Control-Allow-Headers",
+													"value": "Content-Type, api_key, Authorization"
+												},
+												{
+													"key": "Access-Control-Expose-Headers",
+													"value": "Content-Disposition"
+												},
+												{
+													"key": "Server",
+													"value": "Jetty(9.4.53.v20231009)"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"code\": 405,\n    \"message\": \"HTTP 405 Method Not Allowed\"\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "GET",
+					"item": [
+						{
+							"name": "store/inventory",
+							"item": [
+								{
+									"name": "Returns pet inventories by status",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/store/inventory",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"store",
+												"inventory"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "store/order/{orderId}",
+							"item": [
+								{
+									"name": "Place an order for a pet",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Response status code is 200\", function () {\r",
+													"  pm.expect(pm.response.code).to.equal(200);\r",
+													"});\r",
+													"\r",
+													"\r",
+													"pm.test(\"Content-Type header is application/json\", function () {\r",
+													"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");\r",
+													"});\r",
+													"\r",
+													"\r",
+													"pm.test(\"Validate the response schema for id, petId, quantity, shipDate, status, and complete properties\", function () {\r",
+													"    const responseData = pm.response.json();\r",
+													"    \r",
+													"    pm.expect(responseData).to.be.an('object');\r",
+													"    pm.expect(responseData.id).to.exist.and.to.be.a('number');\r",
+													"    pm.expect(responseData.petId).to.exist.and.to.be.a('number');\r",
+													"    pm.expect(responseData.quantity).to.exist.and.to.be.a('number');\r",
+													"    pm.expect(responseData.shipDate).to.exist.and.to.be.a('string');\r",
+													"    pm.expect(responseData.status).to.exist.and.to.be.a('string');\r",
+													"    pm.expect(responseData.complete).to.exist.and.to.be.a('boolean');\r",
+													"});\r",
+													"\r",
+													"\r",
+													"pm.test(\"IDs entre 6-10 ou >1000 devem falhar\", function () {\r",
+													"    const id = parseInt(pm.request.url.split('/').pop(), 10);\r",
+													"\r",
+													"    if ((id >= 6 && id <= 10) || id > 1000) {\r",
+													"        pm.expect(pm.response.code).to.not.equal(200);\r",
+													"    } else {\r",
+													"        pm.expect(pm.response.code).to.equal(200);\r",
+													"    }\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}/store/order/11",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"store",
+												"order",
+												"11"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "ID fora dos valores válidos!",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/store/order/7",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"store",
+														"order",
+														"7"
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "xml",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Fri, 02 May 2025 17:51:26 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/xml"
+												},
+												{
+													"key": "Content-Length",
+													"value": "15"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Access-Control-Allow-Methods",
+													"value": "GET, POST, DELETE, PUT"
+												},
+												{
+													"key": "Access-Control-Allow-Headers",
+													"value": "Content-Type, api_key, Authorization"
+												},
+												{
+													"key": "Access-Control-Expose-Headers",
+													"value": "Content-Disposition"
+												},
+												{
+													"key": "Server",
+													"value": "Jetty(9.4.53.v20231009)"
+												}
+											],
+											"cookie": [],
+											"body": "Order not found"
+										},
+										{
+											"name": "ID grande",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/store/order/1101462975491726537256341542697582764",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"store",
+														"order",
+														"1101462975491726537256341542697582764"
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Fri, 02 May 2025 17:52:29 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Content-Length",
+													"value": "125"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Access-Control-Allow-Methods",
+													"value": "GET, POST, DELETE, PUT"
+												},
+												{
+													"key": "Access-Control-Allow-Headers",
+													"value": "Content-Type, api_key, Authorization"
+												},
+												{
+													"key": "Access-Control-Expose-Headers",
+													"value": "Content-Disposition"
+												},
+												{
+													"key": "Server",
+													"value": "Jetty(9.4.53.v20231009)"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"code\": 400,\n    \"message\": \"Input error: couldn't convert `1101462975491726537256341542697582764` to type `class java.lang.Long`\"\n}"
+										},
+										{
+											"name": "ID negativo!",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/store/order/-110",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"store",
+														"order",
+														"-110"
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "xml",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Fri, 02 May 2025 17:53:01 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/xml"
+												},
+												{
+													"key": "Content-Length",
+													"value": "15"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Access-Control-Allow-Methods",
+													"value": "GET, POST, DELETE, PUT"
+												},
+												{
+													"key": "Access-Control-Allow-Headers",
+													"value": "Content-Type, api_key, Authorization"
+												},
+												{
+													"key": "Access-Control-Expose-Headers",
+													"value": "Content-Disposition"
+												},
+												{
+													"key": "Server",
+													"value": "Jetty(9.4.53.v20231009)"
+												}
+											],
+											"cookie": [],
+											"body": "Order not found"
+										},
+										{
+											"name": "ID string",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/store/order/abc",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"store",
+														"order",
+														"abc"
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Fri, 02 May 2025 17:54:30 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Content-Length",
+													"value": "91"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Access-Control-Allow-Methods",
+													"value": "GET, POST, DELETE, PUT"
+												},
+												{
+													"key": "Access-Control-Allow-Headers",
+													"value": "Content-Type, api_key, Authorization"
+												},
+												{
+													"key": "Access-Control-Expose-Headers",
+													"value": "Content-Disposition"
+												},
+												{
+													"key": "Server",
+													"value": "Jetty(9.4.53.v20231009)"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"code\": 400,\n    \"message\": \"Input error: couldn't convert `abc` to type `class java.lang.Long`\"\n}"
+										},
+										{
+											"name": "ID float",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/store/order/10.2",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"store",
+														"order",
+														"10.2"
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Fri, 02 May 2025 17:54:58 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Content-Length",
+													"value": "92"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Access-Control-Allow-Methods",
+													"value": "GET, POST, DELETE, PUT"
+												},
+												{
+													"key": "Access-Control-Allow-Headers",
+													"value": "Content-Type, api_key, Authorization"
+												},
+												{
+													"key": "Access-Control-Expose-Headers",
+													"value": "Content-Disposition"
+												},
+												{
+													"key": "Server",
+													"value": "Jetty(9.4.53.v20231009)"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"code\": 400,\n    \"message\": \"Input error: couldn't convert `10.2` to type `class java.lang.Long`\"\n}"
+										},
+										{
+											"name": "Sem ID",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{url}}/store/order/",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"store",
+														"order",
+														""
+													]
+												}
+											},
+											"status": "Method Not Allowed",
+											"code": 405,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Fri, 02 May 2025 17:55:33 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Content-Length",
+													"value": "52"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Access-Control-Allow-Methods",
+													"value": "GET, POST, DELETE, PUT"
+												},
+												{
+													"key": "Access-Control-Allow-Headers",
+													"value": "Content-Type, api_key, Authorization"
+												},
+												{
+													"key": "Access-Control-Expose-Headers",
+													"value": "Content-Disposition"
+												},
+												{
+													"key": "Server",
+													"value": "Jetty(9.4.53.v20231009)"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"code\": 405,\n    \"message\": \"HTTP 405 Method Not Allowed\"\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "POST",
+					"item": [
+						{
+							"name": "store/order",
+							"item": [
+								{
+									"name": "Place an order for a pet",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Verifica se o status da resposta é 200\r",
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"\r",
+													"// Verifica se os campos esperados existem na resposta\r",
+													"pm.test(\"Response contains expected fields\", function () {\r",
+													"    const jsonData = pm.response.json();\r",
+													"\r",
+													"    pm.expect(jsonData).to.have.property(\"id\");\r",
+													"    pm.expect(jsonData).to.have.property(\"petId\");\r",
+													"    pm.expect(jsonData).to.have.property(\"quantity\");\r",
+													"    pm.expect(jsonData).to.have.property(\"status\");\r",
+													"    pm.expect(jsonData).to.have.property(\"complete\");\r",
+													"});\r",
+													"\r",
+													"// Verifica se a quantidade é um número maior que 0\r",
+													"pm.test(\"Quantity is a positive integer\", function () {\r",
+													"    const quantity = pm.response.json().quantity;\r",
+													"    pm.expect(quantity).to.be.a(\"number\").and.to.be.above(0);\r",
+													"});\r",
+													"\r",
+													"// Verifica se o status está entre os válidos\r",
+													"pm.test(\"Status is valid\", function () {\r",
+													"    const status = pm.response.json().status;\r",
+													"    pm.expect([\"placed\", \"approved\", \"delivered\"]).to.include(status);\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"id\": 11,\r\n  \"petId\": 198772,\r\n  \"quantity\": 10,\r\n  \"shipDate\": \"2025-05-02T03:50:43.627Z\",\r\n  \"status\": \"delivered\",\r\n  \"complete\": true\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/store/order",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"store",
+												"order"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "ID grande",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"id\": 51633256325632563256,\r\n  \"petId\": 198772,\r\n  \"quantity\": 10,\r\n  \"shipDate\": \"2025-05-02T03:50:43.627Z\",\r\n  \"status\": \"delivered\",\r\n  \"complete\": true\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/store/order",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"store",
+														"order"
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Fri, 02 May 2025 18:01:55 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Content-Length",
+													"value": "96"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Access-Control-Allow-Methods",
+													"value": "GET, POST, DELETE, PUT"
+												},
+												{
+													"key": "Access-Control-Allow-Headers",
+													"value": "Content-Type, api_key, Authorization"
+												},
+												{
+													"key": "Access-Control-Expose-Headers",
+													"value": "Content-Disposition"
+												},
+												{
+													"key": "Server",
+													"value": "Jetty(9.4.53.v20231009)"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"code\": 400,\n    \"message\": \"Input error: unable to convert input to io.swagger.petstore.model.Order\"\n}"
+										},
+										{
+											"name": "ID negativo!",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"id\": -110,\r\n  \"petId\": 198772,\r\n  \"quantity\": 10,\r\n  \"shipDate\": \"2025-05-02T03:50:43.627Z\",\r\n  \"status\": \"delivered\",\r\n  \"complete\": true\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/store/order",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"store",
+														"order"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Fri, 02 May 2025 18:04:31 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Content-Length",
+													"value": "120"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Access-Control-Allow-Methods",
+													"value": "GET, POST, DELETE, PUT"
+												},
+												{
+													"key": "Access-Control-Allow-Headers",
+													"value": "Content-Type, api_key, Authorization"
+												},
+												{
+													"key": "Access-Control-Expose-Headers",
+													"value": "Content-Disposition"
+												},
+												{
+													"key": "Server",
+													"value": "Jetty(9.4.53.v20231009)"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"id\": -110,\n    \"petId\": 198772,\n    \"quantity\": 10,\n    \"shipDate\": \"2025-05-02T03:50:43.627+00:00\",\n    \"status\": \"delivered\",\n    \"complete\": true\n}"
+										},
+										{
+											"name": "ID float",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"id\": 10.2,\r\n  \"petId\": 198772,\r\n  \"quantity\": 10,\r\n  \"shipDate\": \"2025-05-02T03:50:43.627Z\",\r\n  \"status\": \"delivered\",\r\n  \"complete\": true\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/store/order",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"store",
+														"order"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Fri, 02 May 2025 18:05:09 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Content-Length",
+													"value": "118"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Access-Control-Allow-Methods",
+													"value": "GET, POST, DELETE, PUT"
+												},
+												{
+													"key": "Access-Control-Allow-Headers",
+													"value": "Content-Type, api_key, Authorization"
+												},
+												{
+													"key": "Access-Control-Expose-Headers",
+													"value": "Content-Disposition"
+												},
+												{
+													"key": "Server",
+													"value": "Jetty(9.4.53.v20231009)"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"id\": 10,\n    \"petId\": 198772,\n    \"quantity\": 10,\n    \"shipDate\": \"2025-05-02T03:50:43.627+00:00\",\n    \"status\": \"delivered\",\n    \"complete\": true\n}"
+										},
+										{
+											"name": "ID string",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"id\": abc,\r\n  \"petId\": 198772,\r\n  \"quantity\": 10,\r\n  \"shipDate\": \"2025-05-02T03:50:43.627Z\",\r\n  \"status\": \"delivered\",\r\n  \"complete\": true\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/store/order",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"store",
+														"order"
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Fri, 02 May 2025 18:05:34 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Content-Length",
+													"value": "96"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Access-Control-Allow-Methods",
+													"value": "GET, POST, DELETE, PUT"
+												},
+												{
+													"key": "Access-Control-Allow-Headers",
+													"value": "Content-Type, api_key, Authorization"
+												},
+												{
+													"key": "Access-Control-Expose-Headers",
+													"value": "Content-Disposition"
+												},
+												{
+													"key": "Server",
+													"value": "Jetty(9.4.53.v20231009)"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"code\": 400,\n    \"message\": \"Input error: unable to convert input to io.swagger.petstore.model.Order\"\n}"
+										},
+										{
+											"name": "ID vazio",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"id\":,\r\n  \"petId\": 198772,\r\n  \"quantity\": 10,\r\n  \"shipDate\": \"2025-05-02T03:50:43.627Z\",\r\n  \"status\": \"delivered\",\r\n  \"complete\": true\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/store/order",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"store",
+														"order"
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Fri, 02 May 2025 18:06:16 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Content-Length",
+													"value": "96"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Access-Control-Allow-Methods",
+													"value": "GET, POST, DELETE, PUT"
+												},
+												{
+													"key": "Access-Control-Allow-Headers",
+													"value": "Content-Type, api_key, Authorization"
+												},
+												{
+													"key": "Access-Control-Expose-Headers",
+													"value": "Content-Disposition"
+												},
+												{
+													"key": "Server",
+													"value": "Jetty(9.4.53.v20231009)"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"code\": 400,\n    \"message\": \"Input error: unable to convert input to io.swagger.petstore.model.Order\"\n}"
+										},
+										{
+											"name": "Sem ID",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"petId\": 198772,\r\n  \"quantity\": 10,\r\n  \"shipDate\": \"2025-05-02T03:50:43.627Z\",\r\n  \"status\": \"delivered\",\r\n  \"complete\": true\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/store/order",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"store",
+														"order"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Fri, 02 May 2025 18:06:39 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Content-Length",
+													"value": "117"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Access-Control-Allow-Methods",
+													"value": "GET, POST, DELETE, PUT"
+												},
+												{
+													"key": "Access-Control-Allow-Headers",
+													"value": "Content-Type, api_key, Authorization"
+												},
+												{
+													"key": "Access-Control-Expose-Headers",
+													"value": "Content-Disposition"
+												},
+												{
+													"key": "Server",
+													"value": "Jetty(9.4.53.v20231009)"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"id\": 0,\n    \"petId\": 198772,\n    \"quantity\": 10,\n    \"shipDate\": \"2025-05-02T03:50:43.627+00:00\",\n    \"status\": \"delivered\",\n    \"complete\": true\n}"
+										},
+										{
+											"name": "petID grande",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"id\": 10,\r\n  \"petId\": 198772586412412658412568456,\r\n  \"quantity\": 10,\r\n  \"shipDate\": \"2025-05-02T03:50:43.627Z\",\r\n  \"status\": \"delivered\",\r\n  \"complete\": true\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/store/order",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"store",
+														"order"
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Fri, 02 May 2025 18:08:00 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Content-Length",
+													"value": "96"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Access-Control-Allow-Methods",
+													"value": "GET, POST, DELETE, PUT"
+												},
+												{
+													"key": "Access-Control-Allow-Headers",
+													"value": "Content-Type, api_key, Authorization"
+												},
+												{
+													"key": "Access-Control-Expose-Headers",
+													"value": "Content-Disposition"
+												},
+												{
+													"key": "Server",
+													"value": "Jetty(9.4.53.v20231009)"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"code\": 400,\n    \"message\": \"Input error: unable to convert input to io.swagger.petstore.model.Order\"\n}"
+										},
+										{
+											"name": "petID negativo!",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"id\": 10,\r\n  \"petId\": -10,\r\n  \"quantity\": 10,\r\n  \"shipDate\": \"2025-05-02T03:50:43.627Z\",\r\n  \"status\": \"delivered\",\r\n  \"complete\": true\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/store/order",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"store",
+														"order"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Fri, 02 May 2025 18:08:24 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Content-Length",
+													"value": "115"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Access-Control-Allow-Methods",
+													"value": "GET, POST, DELETE, PUT"
+												},
+												{
+													"key": "Access-Control-Allow-Headers",
+													"value": "Content-Type, api_key, Authorization"
+												},
+												{
+													"key": "Access-Control-Expose-Headers",
+													"value": "Content-Disposition"
+												},
+												{
+													"key": "Server",
+													"value": "Jetty(9.4.53.v20231009)"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"id\": 11,\n    \"petId\": -10,\n    \"quantity\": 10,\n    \"shipDate\": \"2025-05-02T03:50:43.627+00:00\",\n    \"status\": \"delivered\",\n    \"complete\": true\n}"
+										},
+										{
+											"name": "petID float",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"id\": 10,\r\n  \"petId\": 10.2,\r\n  \"quantity\": 10,\r\n  \"shipDate\": \"2025-05-02T03:50:43.627Z\",\r\n  \"status\": \"delivered\",\r\n  \"complete\": true\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/store/order",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"store",
+														"order"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Fri, 02 May 2025 18:09:07 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Content-Length",
+													"value": "114"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Access-Control-Allow-Methods",
+													"value": "GET, POST, DELETE, PUT"
+												},
+												{
+													"key": "Access-Control-Allow-Headers",
+													"value": "Content-Type, api_key, Authorization"
+												},
+												{
+													"key": "Access-Control-Expose-Headers",
+													"value": "Content-Disposition"
+												},
+												{
+													"key": "Server",
+													"value": "Jetty(9.4.53.v20231009)"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"id\": 11,\n    \"petId\": 10,\n    \"quantity\": 10,\n    \"shipDate\": \"2025-05-02T03:50:43.627+00:00\",\n    \"status\": \"delivered\",\n    \"complete\": true\n}"
+										},
+										{
+											"name": "petID string",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"id\": 10,\r\n  \"petId\": abc,\r\n  \"quantity\": 10,\r\n  \"shipDate\": \"2025-05-02T03:50:43.627Z\",\r\n  \"status\": \"delivered\",\r\n  \"complete\": true\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/store/order",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"store",
+														"order"
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Fri, 02 May 2025 18:09:52 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Content-Length",
+													"value": "96"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Access-Control-Allow-Methods",
+													"value": "GET, POST, DELETE, PUT"
+												},
+												{
+													"key": "Access-Control-Allow-Headers",
+													"value": "Content-Type, api_key, Authorization"
+												},
+												{
+													"key": "Access-Control-Expose-Headers",
+													"value": "Content-Disposition"
+												},
+												{
+													"key": "Server",
+													"value": "Jetty(9.4.53.v20231009)"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"code\": 400,\n    \"message\": \"Input error: unable to convert input to io.swagger.petstore.model.Order\"\n}"
+										},
+										{
+											"name": "petID vazio",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"id\": 10,\r\n  \"petId\": ,\r\n  \"quantity\": 10,\r\n  \"shipDate\": \"2025-05-02T03:50:43.627Z\",\r\n  \"status\": \"delivered\",\r\n  \"complete\": true\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/store/order",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"store",
+														"order"
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Fri, 02 May 2025 18:10:35 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Content-Length",
+													"value": "96"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Access-Control-Allow-Methods",
+													"value": "GET, POST, DELETE, PUT"
+												},
+												{
+													"key": "Access-Control-Allow-Headers",
+													"value": "Content-Type, api_key, Authorization"
+												},
+												{
+													"key": "Access-Control-Expose-Headers",
+													"value": "Content-Disposition"
+												},
+												{
+													"key": "Server",
+													"value": "Jetty(9.4.53.v20231009)"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"code\": 400,\n    \"message\": \"Input error: unable to convert input to io.swagger.petstore.model.Order\"\n}"
+										},
+										{
+											"name": "Sem petID",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"id\": 11,\r\n  \"quantity\": 10,\r\n  \"shipDate\": \"2025-05-02T03:50:43.627Z\",\r\n  \"status\": \"delivered\",\r\n  \"complete\": true\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/store/order",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"store",
+														"order"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Fri, 02 May 2025 18:10:52 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Content-Length",
+													"value": "113"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Access-Control-Allow-Methods",
+													"value": "GET, POST, DELETE, PUT"
+												},
+												{
+													"key": "Access-Control-Allow-Headers",
+													"value": "Content-Type, api_key, Authorization"
+												},
+												{
+													"key": "Access-Control-Expose-Headers",
+													"value": "Content-Disposition"
+												},
+												{
+													"key": "Server",
+													"value": "Jetty(9.4.53.v20231009)"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"id\": 10,\n    \"petId\": 0,\n    \"quantity\": 10,\n    \"shipDate\": \"2025-05-02T03:50:43.627+00:00\",\n    \"status\": \"delivered\",\n    \"complete\": true\n}"
+										},
+										{
+											"name": "Quantidade grande",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"id\": 10,\r\n  \"petId\": 198772,\r\n  \"quantity\": 321634646497497454646945442,\r\n  \"shipDate\": \"2025-05-02T03:50:43.627Z\",\r\n  \"status\": \"delivered\",\r\n  \"complete\": true\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/store/order",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"store",
+														"order"
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Fri, 02 May 2025 18:11:52 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Content-Length",
+													"value": "96"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Access-Control-Allow-Methods",
+													"value": "GET, POST, DELETE, PUT"
+												},
+												{
+													"key": "Access-Control-Allow-Headers",
+													"value": "Content-Type, api_key, Authorization"
+												},
+												{
+													"key": "Access-Control-Expose-Headers",
+													"value": "Content-Disposition"
+												},
+												{
+													"key": "Server",
+													"value": "Jetty(9.4.53.v20231009)"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"code\": 400,\n    \"message\": \"Input error: unable to convert input to io.swagger.petstore.model.Order\"\n}"
+										},
+										{
+											"name": "Quantidade negativa!",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"id\": 10,\r\n  \"petId\": 198772,\r\n  \"quantity\": -11,\r\n  \"shipDate\": \"2025-05-02T03:50:43.627Z\",\r\n  \"status\": \"delivered\",\r\n  \"complete\": true\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/store/order",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"store",
+														"order"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Fri, 02 May 2025 18:13:58 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Content-Length",
+													"value": "119"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Access-Control-Allow-Methods",
+													"value": "GET, POST, DELETE, PUT"
+												},
+												{
+													"key": "Access-Control-Allow-Headers",
+													"value": "Content-Type, api_key, Authorization"
+												},
+												{
+													"key": "Access-Control-Expose-Headers",
+													"value": "Content-Disposition"
+												},
+												{
+													"key": "Server",
+													"value": "Jetty(9.4.53.v20231009)"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"id\": 10,\n    \"petId\": 198772,\n    \"quantity\": -11,\n    \"shipDate\": \"2025-05-02T03:50:43.627+00:00\",\n    \"status\": \"delivered\",\n    \"complete\": true\n}"
+										},
+										{
+											"name": "Quantidade float",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"id\": 10,\r\n  \"petId\": 198772,\r\n  \"quantity\": 10.2,\r\n  \"shipDate\": \"2025-05-02T03:50:43.627Z\",\r\n  \"status\": \"delivered\",\r\n  \"complete\": true\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/store/order",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"store",
+														"order"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Fri, 02 May 2025 18:16:39 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Content-Length",
+													"value": "118"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Access-Control-Allow-Methods",
+													"value": "GET, POST, DELETE, PUT"
+												},
+												{
+													"key": "Access-Control-Allow-Headers",
+													"value": "Content-Type, api_key, Authorization"
+												},
+												{
+													"key": "Access-Control-Expose-Headers",
+													"value": "Content-Disposition"
+												},
+												{
+													"key": "Server",
+													"value": "Jetty(9.4.53.v20231009)"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"id\": 10,\n    \"petId\": 198772,\n    \"quantity\": 10,\n    \"shipDate\": \"2025-05-02T03:50:43.627+00:00\",\n    \"status\": \"delivered\",\n    \"complete\": true\n}"
+										},
+										{
+											"name": "Quantidade string",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"id\": 10,\r\n  \"petId\": 198772,\r\n  \"quantity\": abc,\r\n  \"shipDate\": \"2025-05-02T03:50:43.627Z\",\r\n  \"status\": \"delivered\",\r\n  \"complete\": true\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/store/order",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"store",
+														"order"
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Fri, 02 May 2025 18:17:28 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Content-Length",
+													"value": "96"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Access-Control-Allow-Methods",
+													"value": "GET, POST, DELETE, PUT"
+												},
+												{
+													"key": "Access-Control-Allow-Headers",
+													"value": "Content-Type, api_key, Authorization"
+												},
+												{
+													"key": "Access-Control-Expose-Headers",
+													"value": "Content-Disposition"
+												},
+												{
+													"key": "Server",
+													"value": "Jetty(9.4.53.v20231009)"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"code\": 400,\n    \"message\": \"Input error: unable to convert input to io.swagger.petstore.model.Order\"\n}"
+										},
+										{
+											"name": "Quantidade vazia",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"id\": 10,\r\n  \"petId\": 198772,\r\n  \"quantity\": ,\r\n  \"shipDate\": \"2025-05-02T03:50:43.627Z\",\r\n  \"status\": \"delivered\",\r\n  \"complete\": true\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/store/order",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"store",
+														"order"
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Fri, 02 May 2025 18:17:55 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Content-Length",
+													"value": "96"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Access-Control-Allow-Methods",
+													"value": "GET, POST, DELETE, PUT"
+												},
+												{
+													"key": "Access-Control-Allow-Headers",
+													"value": "Content-Type, api_key, Authorization"
+												},
+												{
+													"key": "Access-Control-Expose-Headers",
+													"value": "Content-Disposition"
+												},
+												{
+													"key": "Server",
+													"value": "Jetty(9.4.53.v20231009)"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"code\": 400,\n    \"message\": \"Input error: unable to convert input to io.swagger.petstore.model.Order\"\n}"
+										},
+										{
+											"name": "Sem quantidade",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"id\": 10,\r\n  \"petId\": 198772,\r\n  \"shipDate\": \"2025-05-02T03:50:43.627Z\",\r\n  \"status\": \"delivered\",\r\n  \"complete\": true\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/store/order",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"store",
+														"order"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Fri, 02 May 2025 18:18:13 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Content-Length",
+													"value": "117"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Access-Control-Allow-Methods",
+													"value": "GET, POST, DELETE, PUT"
+												},
+												{
+													"key": "Access-Control-Allow-Headers",
+													"value": "Content-Type, api_key, Authorization"
+												},
+												{
+													"key": "Access-Control-Expose-Headers",
+													"value": "Content-Disposition"
+												},
+												{
+													"key": "Server",
+													"value": "Jetty(9.4.53.v20231009)"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"id\": 10,\n    \"petId\": 198772,\n    \"quantity\": 0,\n    \"shipDate\": \"2025-05-02T03:50:43.627+00:00\",\n    \"status\": \"delivered\",\n    \"complete\": true\n}"
+										},
+										{
+											"name": "Shipdate vazia!",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"id\": 11,\r\n  \"petId\": 198772,\r\n  \"quantity\": 10,\r\n  \"shipDate\": \"\",\r\n  \"status\": \"delivered\",\r\n  \"complete\": true\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/store/order",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"store",
+														"order"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Fri, 02 May 2025 18:18:47 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Content-Length",
+													"value": "75"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Access-Control-Allow-Methods",
+													"value": "GET, POST, DELETE, PUT"
+												},
+												{
+													"key": "Access-Control-Allow-Headers",
+													"value": "Content-Type, api_key, Authorization"
+												},
+												{
+													"key": "Access-Control-Expose-Headers",
+													"value": "Content-Disposition"
+												},
+												{
+													"key": "Server",
+													"value": "Jetty(9.4.53.v20231009)"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"id\": 11,\n    \"petId\": 198772,\n    \"quantity\": 10,\n    \"status\": \"delivered\",\n    \"complete\": true\n}"
+										},
+										{
+											"name": "Sem shipdate!",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"id\": 11,\r\n  \"petId\": 198772,\r\n  \"quantity\": 10,\r\n  \"status\": \"delivered\",\r\n  \"complete\": true\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/store/order",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"store",
+														"order"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Fri, 02 May 2025 18:19:15 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Content-Length",
+													"value": "75"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Access-Control-Allow-Methods",
+													"value": "GET, POST, DELETE, PUT"
+												},
+												{
+													"key": "Access-Control-Allow-Headers",
+													"value": "Content-Type, api_key, Authorization"
+												},
+												{
+													"key": "Access-Control-Expose-Headers",
+													"value": "Content-Disposition"
+												},
+												{
+													"key": "Server",
+													"value": "Jetty(9.4.53.v20231009)"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"id\": 11,\n    \"petId\": 198772,\n    \"quantity\": 10,\n    \"status\": \"delivered\",\n    \"complete\": true\n}"
+										},
+										{
+											"name": "Status \"pendent\"!",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"id\": 11,\r\n  \"petId\": 198772,\r\n  \"quantity\": 10,\r\n  \"shipDate\": \"2025-05-02T03:50:43.627Z\",\r\n  \"status\": \"pendent\",\r\n  \"complete\": true\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/store/order",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"store",
+														"order"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Fri, 02 May 2025 18:19:59 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Content-Length",
+													"value": "116"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Access-Control-Allow-Methods",
+													"value": "GET, POST, DELETE, PUT"
+												},
+												{
+													"key": "Access-Control-Allow-Headers",
+													"value": "Content-Type, api_key, Authorization"
+												},
+												{
+													"key": "Access-Control-Expose-Headers",
+													"value": "Content-Disposition"
+												},
+												{
+													"key": "Server",
+													"value": "Jetty(9.4.53.v20231009)"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"id\": 11,\n    \"petId\": 198772,\n    \"quantity\": 10,\n    \"shipDate\": \"2025-05-02T03:50:43.627+00:00\",\n    \"status\": \"pendent\",\n    \"complete\": true\n}"
+										},
+										{
+											"name": "Status vazio!",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"id\": 11,\r\n  \"petId\": 198772,\r\n  \"quantity\": 10,\r\n  \"shipDate\": \"2025-05-02T03:50:43.627Z\",\r\n  \"status\": \"\",\r\n  \"complete\": true\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/store/order",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"store",
+														"order"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Fri, 02 May 2025 18:20:40 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Content-Length",
+													"value": "109"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Access-Control-Allow-Methods",
+													"value": "GET, POST, DELETE, PUT"
+												},
+												{
+													"key": "Access-Control-Allow-Headers",
+													"value": "Content-Type, api_key, Authorization"
+												},
+												{
+													"key": "Access-Control-Expose-Headers",
+													"value": "Content-Disposition"
+												},
+												{
+													"key": "Server",
+													"value": "Jetty(9.4.53.v20231009)"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"id\": 11,\n    \"petId\": 198772,\n    \"quantity\": 10,\n    \"shipDate\": \"2025-05-02T03:50:43.627+00:00\",\n    \"status\": \"\",\n    \"complete\": true\n}"
+										},
+										{
+											"name": "Sem status!",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"id\": 11,\r\n  \"petId\": 198772,\r\n  \"quantity\": 10,\r\n  \"shipDate\": \"2025-05-02T03:50:43.627Z\",\r\n  \"complete\": true\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/store/order",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"store",
+														"order"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Fri, 02 May 2025 18:21:05 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Content-Length",
+													"value": "97"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Access-Control-Allow-Methods",
+													"value": "GET, POST, DELETE, PUT"
+												},
+												{
+													"key": "Access-Control-Allow-Headers",
+													"value": "Content-Type, api_key, Authorization"
+												},
+												{
+													"key": "Access-Control-Expose-Headers",
+													"value": "Content-Disposition"
+												},
+												{
+													"key": "Server",
+													"value": "Jetty(9.4.53.v20231009)"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"id\": 11,\n    \"petId\": 198772,\n    \"quantity\": 10,\n    \"shipDate\": \"2025-05-02T03:50:43.627+00:00\",\n    \"complete\": true\n}"
+										},
+										{
+											"name": "Complete vazio",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"id\": 11,\r\n  \"petId\": 198772,\r\n  \"quantity\": 10,\r\n  \"shipDate\": \"2025-05-02T03:50:43.627Z\",\r\n  \"status\": \"delivered\",\r\n  \"complete\": \r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/store/order",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"store",
+														"order"
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Fri, 02 May 2025 18:21:58 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Content-Length",
+													"value": "96"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Access-Control-Allow-Methods",
+													"value": "GET, POST, DELETE, PUT"
+												},
+												{
+													"key": "Access-Control-Allow-Headers",
+													"value": "Content-Type, api_key, Authorization"
+												},
+												{
+													"key": "Access-Control-Expose-Headers",
+													"value": "Content-Disposition"
+												},
+												{
+													"key": "Server",
+													"value": "Jetty(9.4.53.v20231009)"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"code\": 400,\n    \"message\": \"Input error: unable to convert input to io.swagger.petstore.model.Order\"\n}"
+										},
+										{
+											"name": "Sem complete",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"id\": 11,\r\n  \"petId\": 198772,\r\n  \"quantity\": 10,\r\n  \"shipDate\": \"2025-05-02T03:50:43.627Z\",\r\n  \"status\": \"delivered\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/store/order",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"store",
+														"order"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Date",
+													"value": "Fri, 02 May 2025 18:22:17 GMT"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "Content-Length",
+													"value": "119"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Access-Control-Allow-Methods",
+													"value": "GET, POST, DELETE, PUT"
+												},
+												{
+													"key": "Access-Control-Allow-Headers",
+													"value": "Content-Type, api_key, Authorization"
+												},
+												{
+													"key": "Access-Control-Expose-Headers",
+													"value": "Content-Disposition"
+												},
+												{
+													"key": "Server",
+													"value": "Jetty(9.4.53.v20231009)"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"id\": 11,\n    \"petId\": 198772,\n    \"quantity\": 10,\n    \"shipDate\": \"2025-05-02T03:50:43.627+00:00\",\n    \"status\": \"delivered\",\n    \"complete\": false\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://petstore3.swagger.io/api/v3",
+			"type": "string"
+		},
+		{
+			"key": "defaultPetID",
+			"value": "1",
+			"type": "string"
+		}
+	]
+}
