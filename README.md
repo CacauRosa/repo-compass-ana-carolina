@@ -23,7 +23,7 @@ Abaixo está um resumo do que foi feito em cada semana do estágio, incluindo as
 - Continuação do estudo sobre Teste de Software e Garantia da Qualidade (QA)
 - Estudo sobre AWS: Amazon Q Business, Amazon Q Developer e Amazon BedRock
 - Estudo sobre Plano de Testes e IA
-- Criação e apresentação de um template de Plano de Testes para aplicações Web
+- Criação e apresentação de um modelo de Plano de Testes para aplicações Web
 - **Atividades entregues:** Plano de Testes da aplicação https://front.serverest.dev/login
 ### 📅 Semana 4:
 - Estudo sobre conteúdos da CTFL (Certified Tester Foundation Level)
@@ -33,14 +33,14 @@ Abaixo está um resumo do que foi feito em cada semana do estágio, incluindo as
 ## 🔁 [Sprint 3](Documentos/Sprint%203)
 ### 📅 Semana 5:
 - Estudo sobre Pirâmide de Testes, Issues e Ciclo de vida de Testes de Software
-- Criação de um template de Report de Bugs com Squad e postagem no Jira
+- Criação de um modelo de Report de Bugs com Squad e postagem no Jira
 - Estudo sobre Testes Baseados em Riscos
 - Realização de um Report de Bug em uma aplicação de forma individual
 - Estudo sobre Mapas mentais para análise de testes
 - Realização de um Mapa Mental da mesma aplicação escolhida anteriormente de forma individual
 - Estudo sobre Priorização de Testes
 - Apresentação dos materiais gerados durante a semana
-- **Atividades entregues:** Template do Report de Bugs, Screenshot do modelo no Jira, Report de Bug individual e Mapa Mental da aplicação
+- **Atividades entregues:** Modelo do Report de Bugs, Screenshot do modelo no Jira, Report de Bug individual e Mapa Mental da aplicação
 ### 📅 Semana 6:
 - Aprofundamento em Testes Web
 - Estudo sobre Testes Exploratórios
