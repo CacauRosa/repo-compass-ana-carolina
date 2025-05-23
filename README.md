@@ -8,7 +8,6 @@ Abaixo está um resumo do que foi feito em cada semana do estágio, incluindo as
 
 ## 🔁 [Sprint 1](Documentos/Sprint%201)
 ### 📅 Semana 1:
-- Apresentação geral do Programa de Bolsas da Compass
 - Estudo sobre Metodologias Ágeis
 - Criação de uma História de Usuário baseada em uma funcionalidade fictícia de uma aplicação e-commerce junto com Squad
 - Dinâmica de troca de Histórias de Usuário e avaliação por outras Squads
@@ -65,3 +64,6 @@ Abaixo está um resumo do que foi feito em cada semana do estágio, incluindo as
 - Estudo sobre Python e Pytest
 - Criação de uma calculadora para aplicar conhecimentos sobre Python e TDD
 - **Atividades entregues:** Calculadora
+### 📅 Semana 10:
+- Estudo sobre automação de testes de APIs REST com Robot Framework
+- **Atividades entregues:** Testes com Robot Framework da API Restful-booker (https://restful-booker.herokuapp.com/apidoc/index.html)
