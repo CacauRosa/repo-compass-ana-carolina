@@ -1,4 +1,4 @@
-# 🚀 Atividade do Dia 5 – Desenvolvimento Guiado por Testes (TDD) com Python
+# 🚀 Atividade – Desenvolvimento Guiado por Testes (TDD) com Python
 
 ## 🎯 Objetivo
 

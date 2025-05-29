@@ -45,4 +45,8 @@ Ao longo do estágio, estou tendo a oportunidade de aprender e aplicar conceitos
 | 9         | Git, GitHub, Python, Pytest e TDD | Calculadora em Python |
 | 10        | Automação de APIs REST com Robot Framework | Testes com Robot Framework na [API Restful-booker](https://restful-booker.herokuapp.com/apidoc/index.html) e relatório de Code Review |
 
+<<<<<<< HEAD
 ---
+=======
+---
+>>>>>>> sprint5-calculadora
