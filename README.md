@@ -45,4 +45,11 @@ Ao longo do estágio, estou tendo a oportunidade de aprender e aplicar conceitos
 | 9         | Git, GitHub, Python, Pytest e TDD | Calculadora em Python |
 | 10        | Automação de APIs REST com Robot Framework | Testes com Robot Framework na [API Restful-booker](https://restful-booker.herokuapp.com/apidoc/index.html) e relatório de Code Review |
 
+### 🔁 [Sprint 6](Documentos/Sprint%206)
+
+| 🗓️ Semana | 📚 Conteúdos Principais | ✅ Entregas |
+|------------|------------------------|------------|
+| 11         | Robot Framework, Testes de APIs REST, AmazonQ, teoria sobre Docker e CI/CD, AWS EC2, deploy do ServeRest em uma instância EC2 e evolução pré-challenge | AWS EC2 + ServeRest, melhorias no plano de teste do Challenge 02 e complementação dos testes automatizados com Robot Framework |
+| 12         |  |  |
+
 ---
