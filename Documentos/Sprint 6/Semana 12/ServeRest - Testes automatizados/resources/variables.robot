@@ -1,2 +1,2 @@
 *** Variables ***
-${URL_BASE}     https://compassuol.serverest.dev
+${URL_BASE}     http://3.235.6.243:3000/
