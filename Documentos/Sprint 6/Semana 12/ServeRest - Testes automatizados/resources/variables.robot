@@ -1,2 +1,2 @@
 *** Variables ***
-${URL_BASE}     http://3.235.6.243:3000/
+${URL_BASE}     http://44.198.183.244:3000/
