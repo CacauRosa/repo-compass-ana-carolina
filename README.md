@@ -36,7 +36,7 @@ Ao longo do estágio, estou tendo a oportunidade de aprender e aplicar conceitos
 | 🗓️ Semana | 📚 Conteúdos Principais | ✅ Entregas |
 |-----------|------------------------|------------|
 | 7         | API, Postman, documentação Swagger ([PetStore](https://petstore3.swagger.io/)) | Mapa Mental da API PetStore, Collection Postman e Report de Bug |
-| 8         | Challenge com [API ServeRest](https://compassuol.serverest.dev/) | Plano de Testes, Mapeamento de Issues, Collection e Mapa Mental do Challenge |
+| 8         | Challenge com [API ServeRest](https://compassuol.serverest.dev/) | Plano de Teste, Mapeamento de Issues, Collection e Mapa Mental do Challenge |
 
 ### 🔁 [Sprint 5](Documentos/Sprint%205)
 
@@ -50,6 +50,6 @@ Ao longo do estágio, estou tendo a oportunidade de aprender e aplicar conceitos
 | 🗓️ Semana | 📚 Conteúdos Principais | ✅ Entregas |
 |------------|------------------------|------------|
 | 11         | Robot Framework, Testes de APIs REST, AmazonQ, teoria sobre Docker e CI/CD, AWS EC2, deploy do ServeRest em uma instância EC2 e evolução pré-challenge | AWS EC2 + ServeRest, melhorias no plano de teste do Challenge 02 e complementação dos testes automatizados com Robot Framework |
-| 12         |  |  |
+| 12         | Challenge 03 com [API ServeRest](https://compassuol.serverest.dev/) (Uso do plug-in QAlity no Jira, aprimoramento do planejamento de testes e testes automatizados com Robot Framework) | Plano de Testes atualizado e Pasta com testes automatizados com Robot Framework |
 
 ---
