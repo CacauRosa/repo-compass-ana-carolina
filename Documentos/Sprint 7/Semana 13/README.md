@@ -1,4 +1,4 @@
-# 🧭🔍 Atividades – Estratégias de Mapeamento de Elementos HTML
+# 🧾🔍 Atividades – Estratégias de Mapeamento de Elementos HTML
 
 ## 🎯 Objetivo
 
