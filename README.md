@@ -57,6 +57,6 @@ Ao longo do estágio, estou tendo a oportunidade de aprender e aplicar conceitos
 | 🗓️ Semana | 📚 Conteúdos Principais | ✅ Entregas |
 |------------|------------------------|------------|
 | 13         | Mapeamento de Elementos Web e Testes Automatizos Web | Estratégias para mapear botões e elementos da página [Challenging DOM](https://the-internet.herokuapp.com/challenging_dom) com a Squad, mapeamento de elementos do ecommerce [Lolja](https://www.lolja.com.br/) e repositório com exercícios realizados durante curso da Udemy de Robot eXpress  |
-| 14         | Aprofundando Automação Web | Link para repositório da minha Squad com testes automatizados web da aplicação [ServeRest](https://compassuolfront.serverest.dev/) e link para Code Review realizado do código de testes automatizados web de outra Squad |
+| 14         | Aprofundando Automação Web e conteúdos sobre IA em testes | Link para repositório da minha Squad com testes automatizados web da aplicação [ServeRest](https://compassuolfront.serverest.dev/) e link para Code Review realizado do código de testes automatizados web de outra Squad |
 
 ---
