@@ -52,4 +52,11 @@ Ao longo do estágio, estou tendo a oportunidade de aprender e aplicar conceitos
 | 11         | Robot Framework, Testes de APIs REST, AmazonQ, teoria sobre Docker e CI/CD, AWS EC2, deploy do ServeRest em uma instância EC2 e evolução pré-challenge | AWS EC2 + ServeRest, melhorias no plano de teste do Challenge 02 e complementação dos testes automatizados com Robot Framework |
 | 12         | Challenge 03 com [API ServeRest](https://compassuol.serverest.dev/) (Uso do plug-in QAlity no Jira, aprimoramento do planejamento de testes e testes automatizados com Robot Framework) | Plano de Testes atualizado e pasta com testes automatizados com Robot Framework |
 
+### 🔁 [Sprint 7](Documentos/Sprint%207)
+
+| 🗓️ Semana | 📚 Conteúdos Principais | ✅ Entregas |
+|------------|------------------------|------------|
+| 13         | Mapeamento de Elementos Web e Testes Automatizos Web | Estratégias para mapear botões e elementos da página [Challenging DOM](https://the-internet.herokuapp.com/challenging_dom) com a Squad, mapeamento de elementos do ecommerce [Lolja](https://www.lolja.com.br/) e repositório com exercícios realizados durante curso da Udemy de Robot eXpress  |
+| 14         | Aprofundando Automação Web | Link para repositório da minha Squad com testes automatizados web da aplicação [ServeRest](https://compassuolfront.serverest.dev/) e link para Code Review realizado do código de testes automatizados web de outra Squad |
+
 ---
