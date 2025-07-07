@@ -63,6 +63,6 @@ Ao longo do estágio, estou tendo a oportunidade de aprender e aplicar conceitos
 
 | 🗓️ Semana | 📚 Conteúdos Principais | ✅ Entregas |
 |------------|------------------------|------------|
-| 15 e 16         | Challenge Final com Cinema API (Planejamento de testes, testes manuais e testes automatizados de API e interface web) |  Link para o [repositório](https://github.com/CacauRosa/challenge-final-compass.git) contendo arquivos do Challenge Fina |
+| 15 e 16         | Challenge Final com Cinema App (Planejamento de testes, testes manuais e testes automatizados de API e interface web) |  Link para o [repositório](https://github.com/CacauRosa/challenge-final-compass.git) contendo arquivos do Challenge Fina |
 
 ---
