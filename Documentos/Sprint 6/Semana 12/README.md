@@ -14,9 +14,9 @@ Esta atividade é a continuidade do Challenge 02 utilizando a aplicação **Serv
 ## 💡 Resultados e aprendizados
 
 - Aprendizado prático sobre:
-  - ✅ Uso do QALity no Jira como ferramenta de apoio na execução e acompanhamento de testes.
-  - ✅ Revisão e aprimoramento de planejamentos de teste com base em experiências anteriores.
-  - ✅ Automação de testes com Robot Framework aplicada de forma estratégica após testes manuais.
+  -  Uso do QALity no Jira como ferramenta de apoio na execução e acompanhamento de testes.
+  -  Revisão e aprimoramento de planejamentos de teste com base em experiências anteriores.
+  -  Automação de testes com Robot Framework aplicada de forma estratégica após testes manuais.
 
 ---
 
