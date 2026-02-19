@@ -21,13 +21,13 @@ O foco do curso foi apresentar conceitos, ferramentas e boas práticas na criaç
 
 ## 💡 Resultados e aprendizados
 
-- ✅ Automação de testes com **Robot Framework** aplicada na prática.
-- ✅ Simulação realista de interações do usuário em navegadores web.
-- ✅ Preenchimento automático de formulários e execução de fluxos funcionais.
-- ✅ Validação de comportamentos esperados com clareza e assertividade.
-- ✅ Aplicação de boas práticas na estruturação dos testes automatizados.
-- ✅ Utilização do padrão **Page Object** para criar testes reutilizáveis e bem organizados.
-- ✅ Integração com **MongoDB** para manipulação de dados durante a execução dos testes.
+-  Automação de testes com **Robot Framework** aplicada na prática.
+-  Simulação realista de interações do usuário em navegadores web.
+-  Preenchimento automático de formulários e execução de fluxos funcionais.
+-  Validação de comportamentos esperados com clareza e assertividade.
+-  Aplicação de boas práticas na estruturação dos testes automatizados.
+-  Utilização do padrão **Page Object** para criar testes reutilizáveis e bem organizados.
+-  Integração com **MongoDB** para manipulação de dados durante a execução dos testes.
 
 ---
 
