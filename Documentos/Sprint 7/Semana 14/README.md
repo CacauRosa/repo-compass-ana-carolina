@@ -39,11 +39,11 @@ A atividade foi dividida em duas etapas práticas em formato de dinâmicas de Sq
 
 ## 💡 Resultados e aprendizados
 
-- ✅ Prática real de desenvolvimento colaborativo com Git, Gitflow e pull requests.
-- ✅ Aplicação de testes automatizados com Robot Framework em um projeto real.
-- ✅ Reforço do senso crítico ao analisar código de outras equipes.
-- ✅ Aprendizado com outras abordagens e estruturas utilizadas por outras Squads.
-- ✅ Valorização da comunicação e colaboração entre equipes durante o processo de revisão.
+-  Prática real de desenvolvimento colaborativo com Git, Gitflow e pull requests.
+-  Aplicação de testes automatizados com Robot Framework em um projeto real.
+-  Reforço do senso crítico ao analisar código de outras equipes.
+-  Aprendizado com outras abordagens e estruturas utilizadas por outras Squads.
+-  Valorização da comunicação e colaboração entre equipes durante o processo de revisão.
 
 ---
 
