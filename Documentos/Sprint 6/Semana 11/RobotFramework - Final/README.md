@@ -14,9 +14,9 @@ Nesta atividade, foi realizada a complementação dos testes automatizados criad
 ## 💡 Resultados e aprendizados
 
 - O uso do AmazonQ demonstrou ser útil em diversos pontos do desenvolvimento de testes, como:
-  - ✅ Sugestões de sintaxe e estruturas de testes em Robot Framework.
-  - ✅ Explicações rápidas de comandos e keywords.
-  - ✅ Agilidade na prototipação de testes simples.
+  -  Sugestões de sintaxe e estruturas de testes em Robot Framework.
+  -  Explicações rápidas de comandos e keywords.
+  -  Agilidade na prototipação de testes simples.
 - A atividade contribuiu para ampliar a visão sobre o uso de assistentes de IA no dia a dia de testes automatizados.
 
 ---
