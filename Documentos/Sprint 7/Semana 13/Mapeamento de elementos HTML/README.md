@@ -38,10 +38,10 @@ Cada mapeamento foi documentado com:
 
 ## 💡 Resultados e aprendizados
 
-- ✅ Desenvolvimento de uma visão crítica para escolher a melhor estratégia de mapeamento de acordo com o contexto.
-- ✅ Aprendizado sobre XPATH e seletores CSS.
-- ✅ Experiência prática ao inspecionar e manipular o DOM de páginas reais.
-- ✅ Fortalecimento do trabalho em equipe na parte em Squad e da autonomia na parte individual.
+-  Desenvolvimento de uma visão crítica para escolher a melhor estratégia de mapeamento de acordo com o contexto.
+-  Aprendizado sobre XPATH e seletores CSS.
+-  Experiência prática ao inspecionar e manipular o DOM de páginas reais.
+-  Fortalecimento do trabalho em equipe na parte em Squad e da autonomia na parte individual.
 
 ---
 
