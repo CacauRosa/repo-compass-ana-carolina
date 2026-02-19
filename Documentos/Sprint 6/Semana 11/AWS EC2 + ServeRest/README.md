@@ -15,8 +15,8 @@ Nesta atividade, o objetivo foi explorar a plataforma **AWS EC2** e praticar o d
 ## 💡 Resultados e aprendizados
 
 - Aprendizado prático sobre:
-  - ✅ Criação e acesso a instâncias EC2 via SSH.
-  - ✅ Deploy de aplicação REST em ambiente de nuvem.
+  - Criação e acesso a instâncias EC2 via SSH.
+  - Deploy de aplicação REST em ambiente de nuvem.
 
 ---
 
